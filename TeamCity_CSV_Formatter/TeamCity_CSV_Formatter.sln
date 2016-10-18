@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamCity_CSV_Formatter", "TeamCity_CSV_Formatter.csproj", "{217EFCB7-C2FC-42EB-A5BB-FAA0789CE631}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formatter_Tests", "..\Formatter_Tests\Formatter_Tests.csproj", "{CE21F4F8-88EF-46FF-8E2D-042D31223670}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{217EFCB7-C2FC-42EB-A5BB-FAA0789CE631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217EFCB7-C2FC-42EB-A5BB-FAA0789CE631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217EFCB7-C2FC-42EB-A5BB-FAA0789CE631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217EFCB7-C2FC-42EB-A5BB-FAA0789CE631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE21F4F8-88EF-46FF-8E2D-042D31223670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE21F4F8-88EF-46FF-8E2D-042D31223670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE21F4F8-88EF-46FF-8E2D-042D31223670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE21F4F8-88EF-46FF-8E2D-042D31223670}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
