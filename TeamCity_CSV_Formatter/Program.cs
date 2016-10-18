@@ -10,7 +10,13 @@ namespace TeamCity_CSV_Formatter
     {
         static void Main(string[] args)
         {
+            string[,] csvData; //Not sure of format yet; probably a 2d string array
 
+            FileAccessClass AccessFile = new FileAccessClass();
+            csvData = AccessFile.ReadCsv();
+
+            ParseAndFormatLogicClass MainLogic = new ParseAndFormatLogicClass(csvData);
+            MainLogic.Go(); //Use something more descriptive than "Go"? "Parse"? "Format"?
         }
     }
 }

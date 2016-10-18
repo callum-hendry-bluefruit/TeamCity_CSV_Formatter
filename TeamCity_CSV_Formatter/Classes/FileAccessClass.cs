@@ -8,6 +8,10 @@ namespace TeamCity_CSV_Formatter
 {
     class FileAccessClass
     {
-
+        public string[,] ReadCsv()
+        {
+            string[,] temp = { { "" }, { "" }};
+            return temp;
+        }
     }
 }
