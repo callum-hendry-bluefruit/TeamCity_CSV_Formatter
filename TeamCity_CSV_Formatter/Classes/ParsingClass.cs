@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 
 
-namespace TeamCity_CSV_Formatter
+namespace CSV_Formatter
 {
-    class ParsingClass
+    public class ParsingClass
     {
         public string[,] Parse(string[] csvData)
         {

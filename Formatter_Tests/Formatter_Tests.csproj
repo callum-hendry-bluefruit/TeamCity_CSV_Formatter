@@ -53,6 +53,12 @@
     <Compile Include="Formatter_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeamCity_CSV_Formatter\TeamCity_CSV_Formatter.csproj">
+      <Project>{217efcb7-c2fc-42eb-a5bb-faa0789ce631}</Project>
+      <Name>TeamCity_CSV_Formatter</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

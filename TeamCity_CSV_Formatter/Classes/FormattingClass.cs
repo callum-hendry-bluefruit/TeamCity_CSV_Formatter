@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamCity_CSV_Formatter
+namespace CSV_Formatter
 {
-    class FormattingClass
+    public class FormattingClass
     {
         public string[] Format(string[,] formattedCsv)
         {
