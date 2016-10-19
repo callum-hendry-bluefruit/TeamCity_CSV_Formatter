@@ -13,5 +13,10 @@ namespace TeamCity_CSV_Formatter
             string[,] temp = { { "" }, { "" }};
             return temp;
         }
+
+        public void PrintToTxt(string textToPrint)
+        {
+
+        }
     }
 }
