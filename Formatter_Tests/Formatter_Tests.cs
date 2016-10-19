@@ -78,6 +78,10 @@ namespace Formatter_Tests
                                         { "7", "VSTest: MonolithTests.NancyTests.UploadModuleTests.get_on_upload_root_url_gives_us_OK_status", "OK", "86" } };
 
             string[] expectedFormattedData = { "RootModuleTests", "When unauthorized get on root url should redirect us to login page", "UploadModuleTests", "Get on upload root url gives us OK status" };
+
+            FormattingClass Formatter = new FormattingClass();
+            string[] mockFormattedData = Formatter.Format(parsedCsvData);
+            Assert.AreEqual(expectedFormattedData, mockFormattedData);
         }
     }
 }
