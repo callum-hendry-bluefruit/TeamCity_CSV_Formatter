@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace TeamCity_CSV_Formatter
 {
-    class ParseAndFormatLogicClass
+    class FormattingClass
     {
-        public ParseAndFormatLogicClass(string[,] csvData)
-        {
-
-        }
-
-        public void Go()
+        public FormattingClass (string[] formattedCsv)
         {
 
         }

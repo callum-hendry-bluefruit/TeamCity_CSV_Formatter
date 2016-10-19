@@ -7,7 +7,7 @@ namespace Formatter_Tests
     public class Formatter_Tests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void SeperateLineIntoSections()
         {
             int temp1 = 1, temp2 = 2;
             Assert.AreEqual(temp1, temp2);
