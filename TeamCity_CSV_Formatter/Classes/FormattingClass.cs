@@ -10,7 +10,8 @@ namespace TeamCity_CSV_Formatter
     {
         public string[] Format(string[,] formattedCsv)
         {
-
+            string[] temp = { "" };
+            return temp;
         }
     }
 }
