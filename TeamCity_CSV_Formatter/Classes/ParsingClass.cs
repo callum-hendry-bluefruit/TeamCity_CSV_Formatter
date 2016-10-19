@@ -12,12 +12,6 @@ namespace CSV_Formatter
     {
         public string[,] Parse(string[] csvData)
         {
-            string[,] temp = { { "" } };
-            return temp;
-        }
-
-        private string[] SeperateLineIntoSections(string line)
-        {
             /* ~~~ Example code for iterating through a string's chars ~~~
             string foo = "hello world", bar = string.Empty;
             foreach(char c in foo)
@@ -26,7 +20,7 @@ namespace CSV_Formatter
             }
             */
 
-            string[] temp = { "" };
+            string[,] temp = { { "" } };
             return temp;
         }
     }
