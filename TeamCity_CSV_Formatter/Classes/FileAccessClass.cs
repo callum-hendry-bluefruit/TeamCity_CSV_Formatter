@@ -10,7 +10,7 @@ namespace TeamCity_CSV_Formatter
     {
         public string[] ReadCsv()
         {
-            string[,] temp = { { "" }, { "" }};
+            string[] temp = { "" };
             return temp;
         }
 

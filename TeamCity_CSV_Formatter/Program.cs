@@ -15,10 +15,11 @@ namespace TeamCity_CSV_Formatter
             FileAccessClass AccessFile = new FileAccessClass();
             csvData = AccessFile.ReadCsv();
 
-            ParsingClass CsvParser = new ParsingClass(csvData);
-            string[] formattedCsv = CsvParser.Parse(); //Use something more descriptive than "Go"? "Parse"? "Format"?
+            ParsingClass CsvParser = new ParsingClass();
+            string[,] seperatedCsv = CsvParser.Parse(csvData);
 
-            FormattingClass parsedCsvFormatter = new FormattingClass(formattedCsv);
+            FormattingClass parsedCsvFormatter = new FormattingClass();
+            string[] humanReadableCsv = parsedCsvFormatter.Format(seperatedCsv);
         }
     }
 }

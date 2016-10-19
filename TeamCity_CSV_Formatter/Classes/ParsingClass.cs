@@ -10,14 +10,9 @@ namespace TeamCity_CSV_Formatter
 {
     class ParsingClass
     {
-        public ParsingClass(string[] csvData)
+        public string[,] Parse(string[] csvData)
         {
-
-        }
-
-        public string[] Parse()
-        {
-            string[] temp = { "" };
+            string[,] temp = { { "" } };
             return temp;
         }
 

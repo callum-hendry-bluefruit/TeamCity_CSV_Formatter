@@ -8,7 +8,7 @@ namespace TeamCity_CSV_Formatter
 {
     class FormattingClass
     {
-        public FormattingClass (string[] formattedCsv)
+        public string[] Format(string[,] formattedCsv)
         {
 
         }
