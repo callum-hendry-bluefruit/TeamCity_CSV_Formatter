@@ -37,8 +37,8 @@ namespace Formatter_Tests
         [TestMethod]
         public void Format_the_parsed_data_into_a_human_readable_format()
         {
-            string[,] parsedCsvData = { { "1st_section", "2nd_section", "3rd_section" },
-                                        { "4th_section", "5th_section", "6th_section" } };
+            string[,] parsedCsvData = { { "1st_section", "2nd_section", "3rd_section", "4th_section" },
+                                        { "5th_section", "6th_section", "7th_section", "8th_section" } };
 
             string[] expectedFormattedData = { "1st section", "2nd section", "3rd section", "4th section", "5th section", "6th section" };
 
