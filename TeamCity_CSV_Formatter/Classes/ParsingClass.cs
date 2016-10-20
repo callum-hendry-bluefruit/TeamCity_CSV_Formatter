@@ -12,16 +12,21 @@ namespace CSV_Formatter
     {
         public string[,] Parse(string[] csvData)
         {
-            /* ~~~ Example code for iterating through a string's chars ~~~
-            string foo = "hello world", bar = string.Empty;
-            foreach(char c in foo)
-            {
-                bar += c;
-            }
-            */
+            int lengthOfParsedCsvDataArray = 4; //Should match number of columns in CSV file
 
-            string[,] temp = { { "" } };
-            return temp;
+            string[,] parsedCsvData = new string[csvData.Length, lengthOfParsedCsvDataArray]; //[Y,X]
+
+            for (int i = 0; i < csvData.Length; i++) //Y coordinate of parsedCsvData
+            {
+                string itemToParse = csvData[i];
+                string[] splitString = itemToParse.Split(',');
+                for (int j = 0; j < splitString.Length; j++)
+                {
+                    parsedCsvData[i,j] = splitString[j];
+                }
+            }
+
+            return parsedCsvData;
         }
     }
 }
