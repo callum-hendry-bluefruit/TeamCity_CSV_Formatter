@@ -21,6 +21,7 @@ namespace Formatter_Tests
             Assert.AreEqual(expectedParsedCsvData, mockParsedCsvData);
         }
 
+        [TestMethod]
         public void Seperate_a_real_line_copied_from_CSV_into_sections()
         {//Uses line copied from real CSV in format returned by File.ReadAllLines(string)
             string[] mockCsvData = { "1,VSTest: MonolithTests.NancyTests.RootModuleTests.when_unauthorized_get_on_root_url_should_redirect_us_to_login_page,OK,510" };
