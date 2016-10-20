@@ -19,9 +19,36 @@ namespace CSV_Formatter
                 bar += c;
             }
             */
+            int lengthOfParsedCsvDataArray = 4; //Should match number of columns in CSV file
 
-            string[,] temp = { { "" } };
-            return temp;
+            string[,] parsedCsvData = new string[csvData.Length, lengthOfParsedCsvDataArray]; //[Y,X]
+            int xCoordinateOfArray = 0;
+            for (int i = 0; i < csvData.Length; i++)
+            {
+                string stringBuffer = string.Empty;
+                string itemToParse = csvData[i];
+
+                foreach (char c in itemToParse) //Doesn't parse the 3rd_section part. Use a for loop with string.length as stop param. Can use string[j] as method to access chars in string.
+                {
+                    if (c == ',')
+                    {
+                        parsedCsvData[i, xCoordinateOfArray] = stringBuffer;
+                        stringBuffer = "";
+
+                        xCoordinateOfArray += 1;
+                        if (xCoordinateOfArray > (lengthOfParsedCsvDataArray - 1))
+                        {
+                            xCoordinateOfArray = 0;
+                        }
+                    }
+                    else
+                    {
+                        stringBuffer += c;
+                    }
+                }
+            }
+
+            return parsedCsvData;
         }
     }
 }
