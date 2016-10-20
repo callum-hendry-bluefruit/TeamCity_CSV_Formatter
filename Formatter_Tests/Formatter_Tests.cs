@@ -39,10 +39,10 @@ namespace Formatter_Tests
         {//Uses real line from CSV in the expected format after parsing.
             string[,] parsedCsvData = { { "1", "VSTest: MonolithTests.NancyTests.RootModuleTests.when_unauthorized_get_on_root_url_should_redirect_us_to_login_page", "OK", "510" }};
 
-            string[] expectedFormattedData = { "RootModuleTests", "When unauthorized get on root url should redirect us to login page"};
+            string[,] expectedFormattedData = { { "RootModuleTests", "When unauthorized get on root url should redirect us to login page" } };
 
             FormattingClass Formatter = new FormattingClass();
-            string[] mockFormattedData = Formatter.Format(parsedCsvData);
+            string[,] mockFormattedData = Formatter.Format(parsedCsvData);
             CollectionAssert.AreEqual(expectedFormattedData, mockFormattedData);
         }
 
@@ -56,7 +56,7 @@ namespace Formatter_Tests
                                                 { "", "When authorized as an analyst get on root should provide rulesupload view" } };
 
             FormattingClass Formatter = new FormattingClass();
-            string[] mockFormattedData = Formatter.Format(parsedCsvData);
+            string[,] mockFormattedData = Formatter.Format(parsedCsvData);
             CollectionAssert.AreEqual(expectedFormattedData, mockFormattedData);
         }
 
@@ -70,7 +70,7 @@ namespace Formatter_Tests
                                                 { "UploadModuleTests", "Get on upload root url gives us OK status" } };
 
             FormattingClass Formatter = new FormattingClass();
-            string[] mockFormattedData = Formatter.Format(parsedCsvData);
+            string[,] mockFormattedData = Formatter.Format(parsedCsvData);
             CollectionAssert.AreEqual(expectedFormattedData, mockFormattedData);
         }
     }
