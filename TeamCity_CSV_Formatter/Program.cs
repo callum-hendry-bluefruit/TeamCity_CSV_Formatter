@@ -19,7 +19,7 @@ namespace CSV_Formatter
             string[,] seperatedCsv = CsvParser.Parse(csvData);
 
             FormattingClass parsedCsvFormatter = new FormattingClass();
-            string[] humanReadableCsv = parsedCsvFormatter.Format(seperatedCsv);
+            string[,] humanReadableCsv = parsedCsvFormatter.Format(seperatedCsv);
         }
     }
 }
