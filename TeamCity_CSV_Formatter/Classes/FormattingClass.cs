@@ -18,7 +18,17 @@ namespace CSV_Formatter
                 string lineWithoutUnderscores = RemoveUnderscores(parsedCsv[i, 1]); //Removes underscores from 2nd column (1) in parsedCsv and stores
                 string[] usefulData = GetTestGroupNameAndTestName(lineWithoutUnderscores); //Split the underscore-free line and get back the TestGroupName and TestName
 
-                formattedCsv[i,0] = usefulData[0]; //Put TestGroupName into first column of array on the same row it came from
+                usefulData[1] = CapitaliseFirstLetter(usefulData[1]);
+
+                if (i > 0 && usefulData[0] == formattedCsv[(i-1), 0])
+                {
+                    formattedCsv[i, 0] = " "; //If the TestGroupName is the same as the previous TestGroupName, put a space there instead
+                }
+                else
+                {
+                    formattedCsv[i, 0] = usefulData[0]; //Put TestGroupName into first column of array on the same row it came from
+                }
+
                 formattedCsv[i,1] = usefulData[1]; //Put TestName into second column of array on the same row it came from
             }
 
@@ -36,10 +46,16 @@ namespace CSV_Formatter
             string[] splitLine = toBeSplit.Split('.');
             string[] usefulDataFromSplitLine = new string[2];
 
-            usefulDataFromSplitLine[0] = splitLine[(splitLine.GetLength(0) - 1)]; //Get last item in array
-            usefulDataFromSplitLine[1] = splitLine[(splitLine.GetLength(0) - 2)]; //Get 2nd to last item in array
+            usefulDataFromSplitLine[0] = splitLine[(splitLine.GetLength(0) - 2)]; //Get 2nd to last item in array
+            usefulDataFromSplitLine[1] = splitLine[(splitLine.GetLength(0) - 1)]; //Get last item in array
 
             return usefulDataFromSplitLine;
+        }
+
+        private string CapitaliseFirstLetter(string toBeCapitalised)
+        {
+            string firstLetterCapitalised = toBeCapitalised.First().ToString().ToUpper() + toBeCapitalised.Substring(1);
+            return firstLetterCapitalised;
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Formatter_Tests
                                         { "2", "VSTest: MonolithTests.NancyTests.RootModuleTests.when_authorized_as_an_analyst_get_on_root_should_provide_rulesupload_view", "OK", "198" } };
 
             string[,] expectedFormattedData = { { "RootModuleTests", "When unauthorized get on root url should redirect us to login page" },
-                                                { "", "When authorized as an analyst get on root should provide rulesupload view" } };
+                                                { " ", "When authorized as an analyst get on root should provide rulesupload view" } };
 
             FormattingClass Formatter = new FormattingClass();
             string[,] mockFormattedData = Formatter.Format(parsedCsvData);
