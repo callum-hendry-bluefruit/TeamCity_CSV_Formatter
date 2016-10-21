@@ -9,10 +9,11 @@ namespace CSV_Formatter
     public class FormattingClass
     {
         public string[,] Format(string[,] parsedCsv)
-        {// Expected: { {"RootModuleTests", "When unauthorized get on root url should redirect us to login page"} }
+        {
             int heightOfParsedCsv = parsedCsv.GetLength(0);
             string[,] formattedCsv = new string[heightOfParsedCsv, 2]; //y,x
 
+            int rowOfLastTestGroupName = 0;
             for (int i = 0; i < heightOfParsedCsv; i++)
             {
                 string lineWithoutUnderscores = RemoveUnderscores(parsedCsv[i, 1]); //Removes underscores from 2nd column (1) in parsedCsv and stores
@@ -20,13 +21,14 @@ namespace CSV_Formatter
 
                 usefulData[1] = CapitaliseFirstLetter(usefulData[1]);
 
-                if (i > 0 && usefulData[0] == formattedCsv[(i-1), 0])
+                if (i > 0 && usefulData[0] == formattedCsv[rowOfLastTestGroupName, 0])
                 {
                     formattedCsv[i, 0] = " "; //If the TestGroupName is the same as the previous TestGroupName, put a space there instead
                 }
                 else
                 {
                     formattedCsv[i, 0] = usefulData[0]; //Put TestGroupName into first column of array on the same row it came from
+                    rowOfLastTestGroupName = i;
                 }
 
                 formattedCsv[i,1] = usefulData[1]; //Put TestName into second column of array on the same row it came from
