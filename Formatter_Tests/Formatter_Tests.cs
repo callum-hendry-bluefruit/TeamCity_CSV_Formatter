@@ -11,14 +11,14 @@ namespace Formatter_Tests
         [TestMethod]
         public void Seperate_line_into_sections_with_simple_example_data()
         {
-            string[] mockCsvData = { "1st_section,2nd_section,3rd_section", "4th_section,5th_section,6th_section" };
+            string[] mockCsvData = { "1st_section,2nd_section,3rd_section,4th_section", "5th_section,6th_section,7th_section,8th_section" };
 
             ParsingClass Parser = new CSV_Formatter.ParsingClass();
             string[,] mockParsedCsvData = Parser.Parse(mockCsvData);
 
-            string[,] expectedParsedCsvData = { { "1st_section", "2nd_section", "3rd_section" },
-                                                { "4th_section", "5th_section", "6th_section" } };
-            Assert.AreEqual(expectedParsedCsvData, mockParsedCsvData);
+            string[,] expectedParsedCsvData = { { "1st_section", "2nd_section", "3rd_section", "4th_section" },
+                                                { "5th_section", "6th_section", "7th_section", "8th_section" } };
+            CollectionAssert.AreEqual(expectedParsedCsvData, mockParsedCsvData);
         }
 
         [TestMethod]
@@ -30,21 +30,21 @@ namespace Formatter_Tests
             string[,] mockParsedCsvData = Parser.Parse(mockCsvData);
 
             string[,] expectedParsedCsvData = { { "1", "VSTest: MonolithTests.NancyTests.RootModuleTests.when_unauthorized_get_on_root_url_should_redirect_us_to_login_page", "OK", "510" } };
-            Assert.AreEqual(expectedParsedCsvData, mockParsedCsvData);
+            CollectionAssert.AreEqual(expectedParsedCsvData, mockParsedCsvData);
         }
 
         //Formatting tests
         [TestMethod]
         public void Format_the_parsed_data_into_a_human_readable_format()
         {
-            string[,] parsedCsvData = { { "1st_section", "2nd_section", "3rd_section" },
-                                        { "4th_section", "5th_section", "6th_section" } };
+            string[,] parsedCsvData = { { "1st_section", "2nd_section", "3rd_section", "4th_section" },
+                                        { "5th_section", "6th_section", "7th_section", "8th_section" } };
 
             string[] expectedFormattedData = { "1st section", "2nd section", "3rd section", "4th section", "5th section", "6th section" };
 
             FormattingClass Formatter = new FormattingClass();
             string[] mockFormattedData = Formatter.Format(parsedCsvData);
-            Assert.AreEqual(expectedFormattedData, mockFormattedData);
+            CollectionAssert.AreEqual(expectedFormattedData, mockFormattedData);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace Formatter_Tests
 
             FormattingClass Formatter = new FormattingClass();
             string[] mockFormattedData = Formatter.Format(parsedCsvData);
-            Assert.AreEqual(expectedFormattedData, mockFormattedData);
+            CollectionAssert.AreEqual(expectedFormattedData, mockFormattedData);
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace Formatter_Tests
 
             FormattingClass Formatter = new FormattingClass();
             string[] mockFormattedData = Formatter.Format(parsedCsvData);
-            Assert.AreEqual(expectedFormattedData, mockFormattedData);
+            CollectionAssert.AreEqual(expectedFormattedData, mockFormattedData);
         }
 
         [TestMethod]
@@ -82,7 +82,7 @@ namespace Formatter_Tests
 
             FormattingClass Formatter = new FormattingClass();
             string[] mockFormattedData = Formatter.Format(parsedCsvData);
-            Assert.AreEqual(expectedFormattedData, mockFormattedData);
+            CollectionAssert.AreEqual(expectedFormattedData, mockFormattedData);
         }
     }
 }
